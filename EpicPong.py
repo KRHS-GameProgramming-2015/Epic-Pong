@@ -24,7 +24,7 @@ player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [890, height/2])
 scoreP1 = Score([300, 350])
 scoreP2 = Score([600, 350])
 
-endScore = 3
+endScore = 10
 lastScore = random.randint(1,2)
 beginningScore = 0
 
