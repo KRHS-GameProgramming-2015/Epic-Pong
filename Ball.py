@@ -12,7 +12,7 @@ class Ball():
         for image in images:
             self.images += [pygame.image.load(image)]
         self.image = self.images[0]
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect(center = pos)
         self.radius = self.rect.width/2 - 2
         
         self.frame = 0
@@ -22,8 +22,6 @@ class Ball():
         
         self.didBounceX = False
         self.didBounceY = False
-
-        self.rect = self.rect.move(pos)
         
         self.living = True
         

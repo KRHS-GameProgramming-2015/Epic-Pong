@@ -10,7 +10,12 @@ class PlayerPaddle(Ball):
         
         self.didBounceX = False
         self.didBounceY = False
-
+        
+        self.startPos = pos
+    
+    def reset(self):
+        self.rect.center = self.startPos
+    
     def collideScreen(self, size):
         width = size[0]
         height = size[1]

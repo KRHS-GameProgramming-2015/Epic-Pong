@@ -16,10 +16,10 @@ screen = pygame.display.set_mode(size)
 
 balls = []
 ballTimer = 0
-ballTimerMax = 2 * 60
+ballTimerMax = 3 * 60
 
-player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, 300])
-player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [880, 300])
+player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, height/2])
+player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [890, height/2])
 
 scoreP1 = Score([300, 350])
 scoreP2 = Score([600, 350])
@@ -127,8 +127,10 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, 300])
-                    player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [880, 300])
+                    scoreP1.reset()
+                    scoreP2.reset()
+                    player.reset()
+                    player2.reset()
                     
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
@@ -149,8 +151,10 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, 300])
-                    player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [880, 300])
+                    scoreP1.reset()
+                    scoreP2.reset()
+                    player.reset()
+                    player2.reset()
                 
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
