@@ -25,4 +25,6 @@ def menu():
                    "Quit",
                    "Q"]
     return getMenuOption("> ", optionsList)
+    
+menu()
 
