@@ -1,30 +1,25 @@
-def getMenuOption(prompt, options):
-    goodOption = False
-    while not goodOption:
-        option = raw_input(prompt)
-        if option.lower() in options:
-            goodOption = True
-        else:
-            print "Please make a valid selection from the menu."
-    return option.lower()
-    
-def menu():
-    print "------Epic Pong Menu-------"
-    print "| 1) Human vs Human     |"
-    print "| 2) Human vs Computer  |"
-    print "| 3) Options            |"
-    print "| Q) Quit               |"
-    print "-------------------------"
-    optionsList = ["1",
-                   "2",
-                   "3",
-                   "Human vs Human ",
-                   "Human vs Computer",
-                   "Options",
-                   "up down up down left right left right b a start",
-                   "Quit",
-                   "Q"]
-    return getMenuOption("> ", optionsList)
-    
-menu()
+import sys, pygame, math, random
+from Button import *
+#From King of the Pile
 
+class Menu():
+    def __init__(self, images):
+        self.images = []
+        for image in images:
+            #print image
+            self.images += [pygame.image.load(image)]
+        self.image = self.images[0]
+        self.rect = self.image.get_rect()
+        self.originalImage = self.image
+        self.width, self.height = self.image.get_size() 
+        self.playing = False
+
+    def update():
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: 
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:
+                    sys.exit()
+            elif event.type == pygame.KEYUP:
+                pass
