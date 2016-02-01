@@ -1,7 +1,9 @@
 import sys, pygame, math, random
 from PlayerPaddle import *
 from Ball import *
-from Score import*
+from Score import *
+from Menu import *
+from Button import *
 pygame.init()
 
 clock = pygame.time.Clock()
