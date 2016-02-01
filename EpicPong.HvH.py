@@ -16,7 +16,7 @@ screen = pygame.display.set_mode(size)
 
 balls = []
 ballTimer = 0
-ballTimerMax = 3 * 60
+ballTimerMax = 5 * 60
 
 player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, height/2])
 player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [890, height/2])
@@ -24,7 +24,7 @@ player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [890, height/2])
 scoreP1 = Score([300, 350])
 scoreP2 = Score([600, 350])
 
-endScore = 10
+endScore = 15
 lastScore = random.randint(1,2)
 beginningScore = 0
 
@@ -59,7 +59,7 @@ while True:
         ballTimer += 1
         if ballTimer >= ballTimerMax:
             ballTimer = 0
-            if len(balls) < 1:
+            if len(balls) < 3:
                 d = random.randint(1,2)
                 if lastScore == 1:
                     if d == 1:
