@@ -19,17 +19,17 @@ ballTimer = 0
 ballTimerMax = 3 * 60
 
 player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, height/2])
-player2 = PlayerPaddle( ["Pics/Player/player2.png"], [10,10], [890, height/2])
+player2 = PlayerPaddle( ["Pics/Player/largepaddle.png"], [10,10], [890, height/2])
 
 scoreP1 = Score([300, 350])
-scoreP2 = Score([600, 350])
+#scoreP2 = Score([600, 350])
 
 endScore = 10
 lastScore = random.randint(1,2)
 beginningScore = 0
 
 while True:
-    while scoreP1.score < endScore and scoreP2.score < endScore:
+    while scoreP1.score < endScore:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
                 sys.exit()
@@ -40,10 +40,10 @@ while True:
                 elif event.key == pygame.K_s:
                     player.go("down")
 
-                elif event.key == pygame.K_UP:
-                    player2.go("up")
-                elif event.key == pygame.K_DOWN:
-                    player2.go("down")
+                #elif event.key == pygame.K_UP:
+                    #player2.go("up")
+                #elif event.key == pygame.K_DOWN:
+                    #player2.go("down")
                
             elif event.type == pygame.KEYUP:
                 if event.key == pygame.K_w:
@@ -51,10 +51,10 @@ while True:
                 elif event.key == pygame.K_s:
                     player.go("stop down")
                 
-                elif event.key == pygame.K_UP:
-                    player2.go("stop up")
-                elif event.key == pygame.K_DOWN:
-                    player2.go("stop down")
+                #elif event.key == pygame.K_UP:
+                    #player2.go("stop up")
+                #elif event.key == pygame.K_DOWN:
+                    #player2.go("stop down")
                     
         ballTimer += 1
         if ballTimer >= ballTimerMax:
@@ -82,16 +82,16 @@ while True:
         player.update(size)
         player2.update(size)
         scoreP1.update()
-        scoreP2.update()
+        #scoreP2.update()
             
         for ball in balls:
             ball.update(size)
             if ball.collideScreen(size) == "right":
                 scoreP1.increase(1)
                 lastScore = 1
-            elif ball.collideScreen(size) == "left":
-                scoreP2.increase(1)
-                lastScore = 2
+            #elif ball.collideScreen(size) == "left":
+                #scoreP2.increase(1)
+                #lastScore = 2
             
         for first in balls:
             first.collidePaddle(player)
@@ -109,7 +109,7 @@ while True:
         bgColor = r,b,g
         screen.fill(bgColor)
         screen.blit(scoreP1.image, scoreP1.rect)
-        screen.blit(scoreP2.image, scoreP2.rect)
+        #screen.blit(scoreP2.image, scoreP2.rect)
         for ball in balls:
             screen.blit(ball.image, ball.rect)
         screen.blit(player.image, player.rect)
@@ -134,7 +134,7 @@ while True:
                     
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
-        bg = pygame.image.load("Pics/Player/player1wins.png")
+        #bg = pygame.image.load("Pics/Player/player1wins.png")
         bgrect = bg.get_rect(center = [width/2,height/3])
         
         screen.fill(bgColor)
@@ -158,7 +158,7 @@ while True:
                 
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
-        bg = pygame.image.load("Pics/Player/player2wins.png")
+        #bg = pygame.image.load("Pics/Player/player2wins.png")
         bgrect = bg.get_rect(center = [width/2,height/3])
         
         screen.fill(bgColor)
