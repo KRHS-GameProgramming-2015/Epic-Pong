@@ -59,7 +59,7 @@ while True:
         ballTimer += 1
         if ballTimer >= ballTimerMax:
             ballTimer = 0
-            if len(balls) < 1:
+            if len(balls) < 3:
                 d = random.randint(1,2)
                 if lastScore == 1:
                     if d == 1:
