@@ -16,8 +16,6 @@ bgColor = r,b,g = 255,255,255
 
 screen = pygame.display.set_mode(size)
 
-
-
 mode = "start"
 
 while True:
@@ -30,15 +28,16 @@ while True:
                     mode = "pvp"
                 if event.key == pygame.K_b:
                     mode = "practice"
+                if event.key == pygame.K_RETURN:
+                    mode = ["player 1 win",
+                            "player 2 win",
+                            "practice lose"]
                     
-        playAgain = pygame.image.load("Pics/Player/playagain.png")
-        playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
-        bg = pygame.image.load("Pics/Player/player1wins.png")
-        bgrect = bg.get_rect(center = [width/2,height/3])
+        bg = pygame.image.load("Pics/menubackground.png")
+        bgrect = bg.get_rect(center = [width/2,height/2])
         
         screen.fill(bgColor)
         screen.blit(bg, bgrect)
-        screen.blit(playAgain, playAgainRect)
         pygame.display.flip()
         clock.tick(60)
         
