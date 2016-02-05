@@ -15,6 +15,7 @@ class PlayerPaddle(Ball):
     
     def reset(self):
         self.rect.center = self.startPos
+        self.speedy = 0
     
     def collideScreen(self, size):
         width = size[0]

@@ -23,7 +23,7 @@ pracwall = PlayerPaddle( ["Pics/Player/largepaddle.png"], [10,10], [890, height/
 
 scoreP1 = Score([300, 350])
 
-endScore = 10
+endScore = 10000
 lastScore = random.randint(1,2)
 beginningScore = 0
 
@@ -114,14 +114,15 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
+                    balls = []
+                    endScore = 10000
                     scoreP1.reset()
-                    scoreP2.reset()
                     player.reset()
-                    player2.reset()
+                    pracwall.reset()
                     
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
-        bg = pygame.image.load("Pics/Player/player1wins.png")
+        bg = pygame.image.load("Pics/Player/practicelose.png")
         bgrect = bg.get_rect(center = [width/2,height/3])
         
         screen.fill(bgColor)
