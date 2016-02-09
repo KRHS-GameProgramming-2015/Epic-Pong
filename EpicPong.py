@@ -49,7 +49,7 @@ while True:
     scoreP1 = Score([300, 350])
     scoreP2 = Score([600, 350])
 
-    endScore = 1
+    endScore = 15
     lastScore = random.randint(1,2)
     beginningScore = 0    
     while mode == "pvp":
