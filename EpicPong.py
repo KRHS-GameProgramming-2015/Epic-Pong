@@ -165,15 +165,15 @@ while True:
                 sys.exit()
             
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_w:
+                if event.key == pygame.K_UP:
                     player.go("up")
-                elif event.key == pygame.K_s:
+                elif event.key == pygame.K_DOWN:
                     player.go("down")
                
             elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_w:
+                if event.key == pygame.K_UP:
                     player.go("stop up")
-                elif event.key == pygame.K_s:
+                elif event.key == pygame.K_DOWN:
                     player.go("stop down")
                     
         ballTimer += 1
