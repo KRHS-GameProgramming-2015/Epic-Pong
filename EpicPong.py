@@ -3,7 +3,6 @@ from PlayerPaddle import *
 from Ball import *
 from Score import *
 from Menu import *
-from Button import *
 pygame.init()
 
 clock = pygame.time.Clock()
@@ -24,17 +23,14 @@ while True:
             if event.type == pygame.QUIT: 
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_a:
+                if event.key == pygame.K_1:
                     mode = "pvp"
-                if event.key == pygame.K_b:
+                if event.key == pygame.K_2:
                     mode = "practice"
-                if event.key == pygame.K_RETURN:
-                    mode = ["player 1 win",
-                            "player 2 win",
-                            "practice lose"]
                     
         bg = pygame.image.load("Pics/menubackground.png")
         bgrect = bg.get_rect(center = [width/2,height/2])
+        option = pygame.image.load
         
         screen.fill(bgColor)
         screen.blit(bg, bgrect)
@@ -51,7 +47,7 @@ while True:
     scoreP1 = Score([300, 350])
     scoreP2 = Score([600, 350])
 
-    endScore = 15
+    endScore = 1
     lastScore = random.randint(1,2)
     beginningScore = 0    
     while mode == "pvp":
@@ -250,10 +246,7 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    scoreP1.reset()
-                    scoreP2.reset()
-                    player.reset()
-                    player2.reset()
+                    mode = "start"
                     
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
@@ -274,10 +267,7 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    scoreP1.reset()
-                    scoreP2.reset()
-                    player.reset()
-                    player2.reset()
+                    mode = "start"
                 
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
@@ -296,11 +286,7 @@ while True:
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    balls = []
-                    endScore = 10000
-                    scoreP1.reset()
-                    player.reset()
-                    pracwall.reset()
+                    mode = "start"
                     
         playAgain = pygame.image.load("Pics/Player/playagain.png")
         playAgainRect = playAgain.get_rect(center = [width/2,3*height/4])
