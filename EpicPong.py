@@ -30,10 +30,12 @@ while True:
                     
         bg = pygame.image.load("Pics/menubackground.png")
         bgrect = bg.get_rect(center = [width/2,height/2])
-        option = pygame.image.load
+        option = pygame.image.load("Pics/Gamemodeimageoptions.png")
+        optionrect = option.get_rect(center = [width/2, 3*height/4])
         
         screen.fill(bgColor)
         screen.blit(bg, bgrect)
+        screen.blit(option, optionrect)
         pygame.display.flip()
         clock.tick(60)
         
@@ -151,7 +153,7 @@ while True:
 
     player = PlayerPaddle( ["Pics/Player/player.png"], [10,10], [10, height/2])
     pracwall = PlayerPaddle( ["Pics/Player/largepaddle.png"], [10,10], [890, height/2])
-
+    
     scoreP1 = Score([300, 350])
 
     endScore = 10000
