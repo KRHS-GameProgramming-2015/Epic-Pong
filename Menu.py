@@ -1,5 +1,4 @@
 import sys, pygame, math, random
-from Button import *
 #From King of the Pile
 
 class Menu():
